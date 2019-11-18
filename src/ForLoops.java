@@ -1,5 +1,10 @@
-import java.util.Scanner;
 
 public class ForLoops {
-    Scanner scan = new Scanner(System)
+    public static String printingHashTags(int numHashes){
+        int userNum = 0;
+        return "";
+
+
+    }
+
 }

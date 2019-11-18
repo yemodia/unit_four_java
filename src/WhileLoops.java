@@ -1,22 +1,20 @@
-import javax.swing.*;
+
 import java.util.Scanner;
 
 public class WhileLoops {
     static Scanner scan = new Scanner(System.in);
 
-    public static String fromHeretoThere(int num1, int num2){
+    public static String fromHereToThere(int num1, int num2){
         String bob = "";
-        System.out.print(num1 + " ");
 
-         if (num1 < num2)
-
-         while (num1 != num2)
+         if (num1 > num2)
+             return "Invalid input";
+         while (num1 <= num2)
          {
-             num1 ++;
+
          bob += num1 + " ";
+             num1 ++;
          }
-         else
-            return "Invalid Input";
         return bob;
     }
 
@@ -27,9 +25,9 @@ public class WhileLoops {
             if (X % Y == 0)
                 total += Y + " ";
         Y ++;}
-        return total;
+        return "The factors of " + X + " are: " + total;
     }
-    private static String countPosAndNeg(){
+    public static String countPosAndNeg(){
 
         System.out.print("Enter a positive or negative number or 0 to quit: ");
         int userNum = scan.nextInt();
@@ -46,29 +44,26 @@ public class WhileLoops {
         return "There were " + totalPos + " positive and " + totalNeg + " negative numbers.";
     }
 
-    private static String findMinAndMax(){
+    public static String findMinAndMax(){
         int inputs = 0;
-        int num;
+        int num = 0;
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
-
-
 
         while (inputs < 5) {
             System.out.print("Number: ");
              num = scan.nextInt();
-
             inputs++;
-            if (num > max)
-                max = num;
-            else if (num < min)
-                min = num;
         }
-        return "Max Value is:" + max + "\nMin Value is" + min;
+        if (num > max)
+            max = num;
+        else if (num < min)
+            min = num;
 
+        return "Max Value is:" + max + "\nMin Value is" + min;
     }
 
-    private static String gradePoint(){
+    public static double gradePoint(){
         int inputs = 0;
         String userInput;
         double totalGrades = 0;
@@ -98,20 +93,19 @@ public class WhileLoops {
 
             inputs++;
         }
-         GPA = (int) (((totalGrades /7 )* 100) + 0.5) ;
+         GPA = (int) (((totalGrades / inputs ) * 100) + 0.5) ;
         finalGpa = GPA / 100;
-        return "GPA  = " + finalGpa;
+        return finalGpa;
 
     }
 
 
     public static void main(String[] args) {
 
-
-        //System.out.println(fromHeretoThere(15, 26));
-        //System.out.println(factors(6));
-        //System.out.println(countPosAndNeg());
-        //System.out.println(findMinAndMax());
+        System.out.println(fromHereToThere(11,20));
+        System.out.println(factors(5));
+       System.out.println(countPosAndNeg());
+       System.out.println(findMinAndMax());
         System.out.println(gradePoint());
     }
 }
