@@ -46,7 +46,7 @@ public class WhileLoops {
 
     public static String findMinAndMax(){
         int inputs = 0;
-        int num = 0;
+        int num;
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
 
@@ -54,13 +54,14 @@ public class WhileLoops {
             System.out.print("Number: ");
              num = scan.nextInt();
             inputs++;
+            if (num > max)
+                max = num;
+            if (num < min)
+                min = num;
         }
-        if (num > max)
-            max = num;
-        else if (num < min)
-            min = num;
 
-        return "Max Value is:" + max + "\nMin Value is" + min;
+
+        return "Max value is: " + max + "\nMin value is: " + min;
     }
 
     public static double gradePoint(){
@@ -74,7 +75,7 @@ public class WhileLoops {
 
         while (inputs < 7) {
             System.out.print("Enter seven letter grades (A, B, C, D, or F)");
-            userInput = scan.nextLine();
+            userInput = scan.next();
 
             if (userInput.equals("A") || userInput.equals( "a"))
                 totalGrades += 4.0;
